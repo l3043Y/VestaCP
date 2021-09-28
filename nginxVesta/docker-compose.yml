@@ -1,0 +1,16 @@
+services:
+  nginx:
+    image: nginx:latest
+    volumes: 
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    ports:
+      - "8080:8080"
+      
+# volumes:
+#   mongoDB_data:
+#     external: true
+
+networks: 
+  default: 
+    external: true
+    name: vestacp-net
